@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>
+			The "Replace regular expression" action
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="description" content="Learn how the use the "Replace with regular expression" action.">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="helpTopic60"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>The "Replace regular expression" action</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								If you are unfamiliar with regular expressions, please the "<a href="helpTopic52.html">Regular Expressions Support in A Better Finder Rename</a>" help topic first.<br><br>This action provides classical regular expression support. You provide a pattern and it is replaced in the target string with the value that you provide.<br><br>In the simplest case this is exactly the same as replacing text, e.g. <br><br>Replace "Hello" with "Good Bye" in "Hello World" will result in "Good Bye World".<br><br>"Hello" is a very simple regular expression made up of a series of characters. The power of regular expressions only comes into play when you use "wildcard" characters for the matching.<br><ul><li>. matches any character</li><li>[a-z] matches any lower case alphabetical character</li><li>[0-9] matches any digit</li></ul>A simple regular expression for replacing all numbers with an underscore would go like this:<br><br>Replace "[0-9]" with "_". For "Hello 101" this will yield "Hello ___".<br><br>By default any character matches itself and the wildcard characters we've just seen match precisely one character.<br><ul><li>if we add a + at the end of a character or wild card, this means "one or more"</li><li>if we add a * at the end of a character or wild card, this means "zero or more"</li></ul>For instance, replace "[0-9]+" with "&lt;NumberRemoved&gt;" in "Hello 101" will yield "Hello &lt;Number Removed&gt;".<br><br>In addition to the replacement capabilities that we have already seen, regular expressions also allow you to define "capture groups". These are sections of regular expressions that are enclosed in brackets, e.g. "([0-9]+)" is a capture group that matches all digits in a string.<br><br>The advantage of using capture groups is that you can refer to them in the replacement term by using the dollar sign followed by the index of the capture group (you can have multiple capture groups).<br><br>An example might clarify this: let's replace "([0-9]*)" with "&lt;$1&gt;" in "Hello 101"; this will yield "Hello &lt;101&gt;".<br><br>The capture group matches the 3 digit number which is then replaced with the capture group $1 which itself is enclosed in angle brackets.<br><br>Replacing "([0-9])" with "&lt;$1&gt;" in "Hello 101" will yield "Hello &lt;1&gt;&lt;0&gt;&lt;1&gt;" since each capture group now matches only a single character.<br><br>You can use multiple capture groups like this, e.g.<br><br>Replace "([a-z]*) ([0-9]*)" with "$2 $1" in "Hello 101" will yield "101 World".<br><br>Here the first capture group ($1) matches the characters at the beginning of the string and the second capture group ($2) matches the 3 digit number. Then we replace the entire matching section of the file (in this case the entire string) with the second capture group ($2 = 101) followed by the first capture group ($1 = "Hello").<br><br>The action always replaces the specified regular expression (the "search term") with the value you indicate (the "replacement term") in the file name (the "input string"). The search term will match as much of the input string as possible, but will happily accept "partial" matches, e.g. where the whole input string does not match.<br><br>You can change this behaviour by using "anchors", e.g.<br><ul><li>^ matches the beginning of the file name / input string</li><li>$ matches the end of the file name / input string</li></ul>For instance, "." will match every character of the input string, but "^." will match only the first character and ".$" only the last, e.g.<br><br>Replace "." with "_" in "Hello" will yield "_____".<br>Replace "^." with "_" in "Hello" will yield "_ello".<br>Replace ".$" with "_" in "Hello" will yield "Hell_".<br><br>If for instance, you want to swap the first and the second words separated by a space, but leave any file names that consist of three or more words alone, you can use the search term "^([a-z]*) ([a-z]*)$", e.g.<br><br>Replace "^([a-z]*) ([a-z]*)$" with "$2 $1" in "Hello World" will yield "World Hello".<br>Replace "^([a-z]*) ([a-z]*)$" with "$2 $1" in "Hello Again World" will do nothing because there is a third term.<br>Replace "^([a-z]*) ([a-z]*)$" with "$2 $1" in "Hello Again 101" will do nothing because there is a third term.<br><br>Without the anchors, this would happen:<br><br>Replace "([a-z]*) ([a-z]*)" with "$2 $1" in "Hello World" will yield "World Hello".<br>Replace "([a-z]*) ([a-z]*)" with "$2 $1" in "Hello Again World" will yield "Again Hello World" because the search term will match as much of the file name as it can<br>Replace "([a-z]*) ([a-z]*)" with "$2 $1" in "Hello Again 101" will yield "Again Hello 101".<br><br>If your goal is to re-arrange existing input strings, you may find the "Re-arrange using regular expression" action useful. <br><br>In that action, the search term is automatically "anchored" (e.g. enclosed in ^ and $) and the capture groups are displayed in the preview. Note that instead of using the now more standard $1, $2, .. syntax for backwards compatibility reasons, the action uses /1, /2 instead.<br><br>More details about regular expression syntax is available here.<br><br>
+							</font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35"></td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='reg | ex | regular | expression | replace | capture' bookID='A Better Finder Rename 11 Help'">
+								Tell me more</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

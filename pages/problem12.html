@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			When I try to add certain files to the preview table the program refuses to add them.
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="keywords" content="preview drag drop not accepted add">
+		<meta name="description" content="Learn why the program sometimes refuses to add certain files to the preview.">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="problem12"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>当我尝试将某些文件添加到预览列表时，程序拒绝添加它们。</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								最简单的解释是这个操作无法生效，也不应该生效...您可以在下方阅读详细的解释：<br><br>
+								A Better Finder Rename 可以通过勾选"包含子文件夹及其内容"复选框 <br><br>
+								让您添加整个文件夹层次结构以进行重命名操作，默认情况下该复选框处于关闭状态<br><br>
+								同时这个功能也对其他类型的文件和文件夹添加了一些限制，这么做是为了稳定软件的正常操作运行<br><br>
+								在您使用软件添加的过程中，即使文件没有列出在列表中，也有可能会导致发生严重的错乱<br><br>
+								以下观点解释了为什么拒绝添加这些文件的原因，即便你看完过后也并不能对你有什么帮助<br><br>
+								对于那些不想浪费时间用户，最简单的解释就是：人家不可以这样做，这样做会把人家搞坏坏的<br><br>
+								至于剩下的这些刨根问底的人，请往下继续阅读。<br><br>
+								理论上，添加两个重叠的文件夹层次结构没有任何意义，这么做还会导致用户界面崩坏、闪退<br><br>
+								下面我们来举一些小例子，看完也许你便能了解其中缘由<br><br>
+								想象一下，先将您的"桌面"文件夹拖放至列表中，随后又将您的个人用户文件夹拖放至列表中。"桌面"文件夹当然是个人用户文件夹的子文件夹<br><br>
+								只要您没有勾选"包含子文件夹及其内容"的功能，那么程序则只会按照独立文件夹的方式来重命名两个文件夹名称<br><br>
+								但是，一旦您勾选了“包含子文件夹及其内容”的功能，那么重命名操作对“桌面”便没有了意义<br><br><br>
+								我能否使用程序删除了“桌面”文件夹？删除了会发生什么？<br>
+								本程序当然可以删除掉“桌面”文件夹，但是“桌面”文件夹是隶属于你个人文件夹的必备层次结构之一，删除了可能会导致操作系统出错，这么看起来你觉得“桌面”文件夹可以删除吗？<br><br>
+								You could say "well it means that it's explicitly excluded", so it should be all subfolders of the user folder except for the desktop folder. In this case, should all the files and folders (ie. the "content") also be explicitly excluded or not? Moreover, what if you want to remove the explicit exclusion? The exclusion is no longer represented anywhere, so how do you select it in order to remove it? "Well, we could have a glowing red item in the folder list that represents the exclusion." Well, yes we could.. but that way lies madness..<br><br>There are a myriad other complications in allowing items from subfolders into the preview list, but this one specific example to illustrate the general problem.<br><br>There are similar problems with allowing folders which contain items that are already in the list into the list.<br><br>The truth is that there is no way of supporting this behavior that does not end up being much more confusing than it would ever be useful.<br><br>Finally, there is one alternative behavior to what is currently implemented that one could argue would be beneficial: Only imposing the restrictions once the "subfolders and their contents" feature is activated.<br><br>This would have the advantage of letting users who have no interest in the feature use the program exactly as they would expected.<br><br>The disadvantage would of course be that it would shift the "weirdness" to the moment where the feature is switched on. What would need to happen would be that either the checkbox would be disabled as soon as there are items in there that violate the necessary restrictions; or that the program does some "house keeping" as soon as the feature is switched on.<br><br>Both of those alternatives, I feel, are worse than simply not letting you drop the files into the preview in the first place.<br><br>This refusal, while unintuitive, is easily observable and you know exactly what has happened, even though you may not understand the why in detail.<br><br>Disabling the "subfolders and its content" would be plain mystifying, plus you wouldn't know how to get it back. This wouldn't just be "odd", it would prevent you from going back. In my opinion that would be much worse.<br><br>Finally, doing some "house keeping" when the feature is activated isn't a good solution either. A dialog would need to appear that explains why you can't have overlapping hierarchies and the program would need to remove all but the highest level folder (in our example only the user folder would remain).<br><br>This would again be confusing, plus you couldn't get back to previous situation: Imagine you dropped 20 individual folders into the preview and then their parent folder. Now you click on the checkbox; all subfolders are added, but when you untick the checkbox again the 20 folders are gone but only the parent folder remains!?<br><br>Finally, it comes down to a design decision of where to place the non-intuitive behavior. Is the "subfolder and their contents" feature more important than the ability to drag &amp; drop several items from different levels of the same file hierarchy?<br><br>This decision isn't all that difficult to make as:<br><ul><li>most users never run into the restrictions because when they drag and drop they generally drag and drop from the same folder</li><li>the "subfolders and their hierarchy" feature is essential for many common usage scenarios (ie. preparing files for transfer, imposing naming standards, etc)</li><li>it's easy to get around the restrictions by doing separate renames</li></ul>Right, that was the long explanation :-)<br><br></font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="http://www.publicspace.net/ABetterFinderRename/">
+								Go to the web site</a></font>
+					</td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='preview | drag | drop | not | accepted | add' bookID='A Better Finder Rename 11 Help'">
+								Tell me more</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

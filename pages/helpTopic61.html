@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>
+			The "Re-arrange using regular expressions" action
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="description" content="Learn how to re-arrange file name parts using regular expressions.">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="helpTopic61"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>The "Re-arrange using regular expressions" action</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								If you are unfamiliar with regular expressions, please the "<a href="helpTopic52.html">Regular Expressions Support in A Better Finder Rename</a>" help topic first.<br><br>This action is specifically intended to allow you to easily re-arrange parts of existing file names using the power of regular expressions to match the different file name parts.<br><br>You specify a "pattern" as a regular expression with capture groups and then use the capture variables $1, $2, $3 in the "substitution expression" to re-arrange the different parts of the name. A Better Finder Rename shows the contents of each capture variable in the preview table to help you tweak your settings.<br><br>Capture groups and capture variables are explained in more detail in the <a href="helpTopic62.html">"Basic Regular Expression Syntax"</a> help topic.<br><br>As a simple example of using this feature, let's swap the first and the second word of a couple of two word file names.<br><br>We start by defining a regular expression with two capture groups, e.g. "(.*) (.*)" defines two capture groups with arbitrary content separated by a space.<br><br>The "substitution expression" is a string in which we can substitute the variables $1, $2, $3 with the content of the capture group with the same index.<br><br>"$2 $1" will simply swap the contents of the first and the second capture groups.<br><ul><li>"hello world" -&gt; "world hello"</li><li>"John Smith" -&gt; "Smith John"</li></ul>Adding arbitrary text around the capture variables simply includes this text in the new file name, e.g.<br><br>"Dear Mr $2" in the above "John Smith" example would yield "Dear Mr Smith".<br><br>The action supports capture variables $1 to $8. For backwards compatibility with earlier versions of A Better Finder Rename, the old \1, \2, \3, etc syntax is still supported, but we recommend using the now standard $1, $2, $3, etc syntax instead.
+							</font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35"></td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='reg | ex | regular | expression | expressions | re-arrange | move | swap' bookID='A Better Finder Rename 11 Help'">
+								Tell me more</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

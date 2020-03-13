@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>
+			Posix Full Path Tab-Delimited File List Format
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="description" content="Learn how to use the POSIX full path tab-delimited file list format">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="helpTopic58"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>Posix Full Path Tab-Delimited File List Format</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								This is a specialized form of the "<a href="helpTopic34.html">Tab-Delimited File List Format</a>" which deals gracefully with multiple files that share the same unique name but are located in different folders.<br><br>In the normal tab-delimited file list format, if you have several files with the same "current name" (ie. the name in the first column), A Better Finder Rename 9 has no way of working out which line refers to which file. In order to enable it to do so, you need to use not only the "current name" of the file but a <b>the full POSIX path</b> to the file in the first column.<br><br>This will look something like this:<br><br><i>/Users/frankrei/Documents/My file	The New Name<br>/Users/frankrei/Documents/My Document	The New Document</i><br><ol><li>the <b>absolute POSIX compatible path</b> to the old file</li><li>the new name</li></ol>A Better Finder Rename 9 changes the name of the file specified by the full path to the new name specified in the second column.<br><br>Make sure that you put the absolute file path to the file or folder you want to rename into the first column in POSIX format. An absolute file path describes how you get from the "root" of the file system to an individual file or folder. Every file and folder has a unique absolute file path.<br><br>Understanding file paths is essential to getting this feature to work, so you might want to find out more about them at wikipedia (http://en.wikipedia.org/wiki/Path_(computing)).<br><br><b>The second column needs to have only the new file name in it; not a path!</b><br><br>You can create the file list by hand or you can let A Better Finder Rename help you with the task by using the "<a href="helpTopic29.html">Save File List</a>" feature.<br><br>A  checkbox allows the case of the path name to be ignored (e.g. "/Users/smith/" = "/users/smith/") for use with case insensitive file systems.<br><br><b>Important!</b> There is one entirely unintuitive detail about how Mac OS X handles POSIX file names on the default HFS+ file system that you need to know about.<br><br>Because POSIX uses the forward slash "/" as the path separator and HFS+ uses the colon ":" for the same purpose, Mac OS X does some "clever" translation between both symbols, e.g. <br><br>Say you have a file called "My file name with a /", in the POSIX part, the slash will be replaced by a colon:<br><br><i>/Users/frankrei/Documents/My file with a :	My New Name with a /</i><br><br>Forward slashes must be replaced by a colon in the POSIX path, but they are fine in the "new name" part. You may not however have any colons in the new name.<br><br>Also you may not mix full paths with simple current file names in the same file list. The first column must either contains only full POSIX paths or simple file names.
+							</font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35"></td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='tab | delimited | file | names | posix | path' bookID='A Better Finder Rename 11 Help'">
+								Tell me more</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			When renaming files I get the "You may not have sufficient access privileges.." error message.
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="keywords" content="you do not have sufficient access privileges locked read-only volume can't cannot problem">
+		<meta name="description" content="Learn what to do about the "You may not have sufficient access privileges.." error message.">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="problem11"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>在重命名文件时，出现 "您可能没有足够的访问权限..." 错误消息。</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								此错误消息涵盖了以下所有的情况，其中 A Better Finder Rename 尝试重命名文件，但操作系统拒绝这样做。<br><br>发生这种情况的原因有很多:<br><ul><li>您没有足够的访问权限</li></ul>在 macOS 中，每个文件和每个文件夹都受到一种安全方案的保护，该方案限制了谁可以对它们执行哪些操作。这由所谓的"访问权限"控制。如果没有足够的访问权限，那么将无法更改文件名。<br><br>而您可以通过在 Finder 中选择文件并从文件的右键菜单中选择"显示简介"并在显示简介中的子菜单"共享和权限"中找出 (或者更改) 您的访问权限。<br><ul><li>该文件已锁定</li></ul>macOS 上有一个标志，可防止文件受到更改。如果已设置，则 A Better Finder Rename 将无法重命名该文件。您可以通过在 Finder 选中此文件并从右键菜单中选择"显示简介"并在显示简介中的子菜单"常规"中解锁文件。<br><ul><li>该文件位于只读媒体上</li></ul>如果您正在尝试更改 CD 或 DVD 上文件的名称，那么当然不可能更改。<br><ul><li>该文件位于不兼容的外部驱动器或不受支持的远程文件系统上</li></ul>macOS 运行在一个称为"HFS+"又或者是"APFS"的本地文件系统。而这，是 macOS 操作所有文件的基础，从理论上讲，macOS 将会对其他文件系统以完全相同 (指"HFS+"/"APFS") 的方式运行。<br><br>当然，其他文件系统在文件名，路径长度，最大文件大小等方面会有不同的限制，但是这些差异应该由文件系统驱动程序隐藏，因此您无需了解它们。<br><br>不幸的是，其中一些文件系统驱动程序的质量并不总是达到应有的水平，因此您可能会遇到问题，并且可能会收到上述错误消息。<br><br>您可以尝试使用其他文件系统来解决大多数这些问题 "<a href="helpCategory14">重命名机制</a>"。<br><br>有时会因为 <a href="http://www.buffalotech.com/products/network-storage/terastation/">Buffalo TeraStations</a> 预先安装了笨拙的专有文件系统，该文件系统限制了可以使用的绝对路径的长度。请访问 Buffalo 的网站，以获取有关如何设置与 Mac 一起使用的 TeraStation 的说明。<br><br>而另一个常见的罪魁祸首是闪存卡。用于闪存卡的驱动程序非常差，在更改任何名称之前将文件移动到 Mac 的硬盘中要安全得多。</font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="http://www.publicspace.net/ABetterFinderRename/">
+								进入网站</a></font>
+					</td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='you | do | not | have | sufficient | access | privileges | locked | read-only | volume | can't | cannot | problem' bookID='A Better Finder Rename 11 Help'">
+								了解更多</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

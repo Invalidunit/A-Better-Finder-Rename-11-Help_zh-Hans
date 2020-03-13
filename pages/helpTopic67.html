@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>
+			Overview of tag based renaming
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="description" content="Learn more about tag-based renaming in A Better Finder Rename 9.">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="helpTopic67"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>Overview of tag based renaming</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								<b>About Meta-Data &amp; Tags</b><br><br>Today's media files, such as music, image and video files contain a lot of information about their content.<br><br>Music files contain "meta-data" about the song, the album, the artist, the encoding, etc. Photo, picture and video files contain meta-data about where and when they were shot, the make and model of the camera and the lens, the dimensions and quality of the image data, exposure time, shutter speed, aperture and much else besides.<br><br>This type of information is often more useful in describing the contents of the file than the default file name which is often fairly nondescript e.g. "img1024.jpg".<br><br>A Better Finder Rename has always had many features that let you exploit this meta-data to rename your files, but starting with version 9 we have expanded this with a new mechanism called "tag-based renaming".<br><br><b>Tag Based Renaming</b><br><br>When using tag-based renaming you specify which "tags" (bits of meta-data, such as "artist", "shooting date", etc) you want to use and how they should be inserted into the existing file name or be used to replace it.<br><br>You will find a full complement of tag-based renaming actions in the "Tags" category.<br><br>A few words of caution before we describe this mechanism in more detail:<br><ul><li>tag-based renaming is an advanced feature</li></ul>Novice users in particular are probably better off trying to find the right action from one of the other action categories before resorting to tag-based renaming.<br><br>You can exploit some meta-data using the actions in the "Date &amp; Time", "Sequence Numbers", "Image Dimensions" and "MP3/AAC Music" categories.<br><ul><li>not all tags are available for all file types</li></ul>Most tags are specific to certain file formats, e.g. music tags are only present in music files and will not work on picture or image files for instance.<br><ul><li>not all potentially available tags for a file format may be filled out or have a valid value</li></ul>What kind of meta-information is available in a specific file depends not only on the file format, but also on the application, device or person that has encoded it. <br><br>Moreover, many devices and applications rely on the user to provide the meta-data. This is often a problem with mp3 files where the person "ripping" the file may not have taken the time to provide full and correct meta-data. In this case, the meta-data may not be of good quality, missing or simply be false altogether.<br><br>JPEG pictures taken with digital cameras generally have valid EXIF meta-data (e.g. exposure time, etc) but JPEG pictures downloaded from the internet, scanned in or produced with an image editing application may not have any EXIF information. Some cameras and phones provide a full set of meta-data others do not. In addition, editing or converting image files may result in some or all of the meta-data getting "ost.<br><ul><li>when A Better Finder Rename cannot find the required meta-information to fill out a tag, it will leave the file name completely unchanged</li></ul>This is to avoid producing messy file names, where bits of information are missing.<br><ul><li>the easiest way of seeing whether meta-information is present and correct is to experiment using the preview list</li></ul>The preview list on the right side of your A Better Finder Rename dialog always shows the new file names before anything is changed. You can safely add and remove tags and observe the effect on the file names. The files that do not get changed (are grayed out) do not contain the required meta-data. It is a good idea to scroll through the entire list before performing the rename if you are not 100% confident that all the files have the required meta-information.<br><ul><li>A Better Finder Rename changes file names, not meta-data.</li></ul>If the meta-data in your files does not exist or is incorrect A Better Finder Rename is <b>not</b> the tool to change it with. A Better Finder Rename is a file renamer, not a meta-data editor.<br><br><b>Working with Tags</b><br><br>Tags are text enclosed between "&lt;" and "&gt;", e.g. &lt;ImageHeight&gt; and appear as blue bubbles in the "pattern" field. You can drag &amp; drop them within the pattern field to re-arrange them.<br><br>A Better Finder Rename will replace the tag in the "pattern" with the value of the meta-data in your files. If the name does not change, this means the meta-data for the tag does not exist in the file.<br><br>You can type the tags via the keyboard, but it is generally easier to drag and drop them from the list of available tags below the pattern field. Just select the tag you need and drag it into the "pattern" field. Any text in the pattern field that is not a tag will be copied verbatim into the new file name, e.g. &lt;ImageWidth&gt;x&lt;ImageHeight&gt; will become 800x600.<br><br>The various tags are subdivided into categories, such as "image", "camera", "shooting date", etc. You can filter the available tags by clicking on one of those categories. Clicking on "all" will bring back all the tags.
+							</font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35"></td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='tag | token | id3 | exif | music | dates' bookID='A Better Finder Rename 11 Help'">
+								Tell me more</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

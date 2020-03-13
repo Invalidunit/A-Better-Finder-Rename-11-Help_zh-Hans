@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>
+			Dealing with very large renaming tasks.
+		</title>
+		<meta name="copyright" content="Copyright (c) 2019 Frank Reiff. All rights reserved.">
+		<link href="../styles/task.css" rel="stylesheet" media="all">
+		<meta name="description" content="Learn about how to best deal with very large renaming jobs.">
+		<style type="text/css" media="all"><!--
+#mainbox { background-color: #FFF; margin-top: 0px; margin-right: 26px; margin-left: 8px; position: absolute; top: 10px; left: 0px; visibility: visible; display: block }
+--></style>
+	</head>
+	<body leftmargin="15" bgcolor="#FFFFFF">
+		<a name="helpTopic64"></a>
+		<div id="mainbox" align="left">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom" height="28">
+					<td width="3" height="28"></td>
+					<td colspan="3" valign="top" height="28">
+						<p><a href="../A%20Better%20Finder%20Rename%2011%20Help.html"><font face="Lucida Grande,Arial, sans-serif">A Better Finder Rename 11 Help</font></a></p>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td width="3">&nbsp;</td>
+					<td width="32"><img src="../images/icon32.png" alt="A Better Finder Rename 11 Icon" height="32" width="32"></td>
+					<td width="8">&nbsp;</td>
+					<td valign="middle"><font id="topic" size="4" face="Lucida Grande,Arial, sans-serif"><b>Dealing with very large renaming tasks.</b></font></td>
+				</tr>
+				<tr height="10">
+					<td colspan="4" height="10">&nbsp;</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="3">
+				<tr>
+					<td>
+						<p>
+							<font face="Lucida Grande,Arial,sans-serif">
+								The vast majority of users will be using A Better Finder Rename for renaming jobs not exceeding a couple of thousand files at most and A Better Finder Rename's user experience and default settings are optimized for these cases.<br><br>The renaming engine of A Better Finder Rename is, however, capable of dealing even with very large renaming jobs and there are no hard and fast limits built into the engine. <br><br>There is, however, no way around the fact that renaming 100,000 files takes a least 100 times longer than renaming 1,000 files. In reality, the difference in performance is probably going to be larger as the machine and its resources will be stressed, there will disk swapping, contention with other programs that need resources, etc.<br><br>A Better Finder Rename offers many ways of sorting files and needs to maintain indexes to be able to do so and this naturally requires a certain overhead. In this section, we will look at various ways of dealing with large renaming jobs and examine a few do's and don'ts.<br><br><b>Add the parent folder rather than individual items</b><br><br>The Finder is very slow when you attempt to drag &amp; drop huge numbers of files and we thus recommend that instead of dropping individual items into the A Better Finder Rename's Preview list, you instead only drag the parent folder into the preview list and tick the "Subfolders and their contents" checkbox which will add all the files within the parent folder.<br><br>This can be up to 1,000 times faster as the Finder needs to do very little and A Better Finder Rename can do its job much more efficiently.<br><br>Similar problems affect adding large numbers of times via the contextual menu, the services menu or the "Open File..." dialog. It's always best to add the top-level folder.<br><br><b>If you don't need EXIF information switch it off</b><br><br>A Better Finder Rename by default will retrieve EXIF digital camera dates from all files that may have this information. EXIF information is stored <i>inside</i> the files rather than being attributes of the file system and A Better Finder Rename will thus have to open and load the entire file to get to the information, e.g. if you are renaming 4 terabytes of large image, video or PDF files this will require A Better Finder Rename to read the entire 4 terabytes of data from the hard disk resulting in very poor performance indeed.<br><br>So if you do not require sorting by digital camera date or adding the digital camera date to the file names, it's best to switch it off in the preferences. <br><ul><li>Select "Preferences..." from the "A Better Finder Rename 9" menu</li><li>in the "General" tab un-tick "Retrieve EXIF and shooting date sorting information"</li></ul><b>Fine-tune your settings on a subset of files</b><br><br>A Better Finder Rename will always preview the new file names for all files in the preview list.<br><br>If you have a couple of thousand files this can become fairly slow and interactivity can suffer. Instead add a representative subset of files that will allow you to get an accurate preview of your settings. Once your settings are fine-tuned, clear the preview list (or better still quit and relaunch A Better Finder Rename) and add the full list of files you want to rename.<br><br><b>If all else fails, proceed in batches</b><br><br>If renaming is just too slow, you might need to divide the files into batches of an appropriate size.<br><br>The size of an "appropriate" batch various greatly depending on your machine, the renaming actions that you select, the files that need to be renamed, etc.<br><br>On a modern 64-bit Intel desktop Mac with 2GB of RAM and with spare hard disk space, you can expect to "comfortably" rename between 20,000 and 50,000 files in a single renaming operation. A Better Finder Rename has been successfully tested on jobs of 300,000+ files.<br><br>If you decide to proceed in batches, it might be best to keep them within the lower limit of 10,000-20,000 files as this will faster than larger renames.<br><br><b>Keep a backup</b><br><br>It should go without saying that before you rename any number of files, you should have a full backup with their original names, as there is always a possibility of something going wrong. Very large renames obviously can potentially leave you with a much larger mess and are more likely to fail due to the larger demands on the machine, so it's twice as important to keep a backup.
+							</font>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" height="35" border="0" cellspacing="0" cellpadding="3">
+				<tr valign="bottom" height="35">
+					<td align="left" height="35"></td>
+					<td align="right" height="35">
+						<font face="Lucida Grande,Arial,sans-serif">
+							<a href="help:search='large | huge | number | files | batch | performance | memory' bookID='A Better Finder Rename 11 Help'">
+								Tell me more</a></font>
+					</td>
+				</tr>
+				<tr height="35">
+					<td>
+					</td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
